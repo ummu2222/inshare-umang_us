@@ -7,16 +7,23 @@ const express = require('express');
 
 const app = express(); // calling express fun to eccess objects
 const path = require('path');
-
+const cors = require('cors');
 
 const PORT = process.env.PORT || 3000 ;
 
+app.use(cors(corsOption));
 // to add css in download.ejs or to remove MIME error
 app.use(express.static('public'));
 app.use(express.json()); // middleware of express , it will parse json data
 
 const connectDB = require('./config/db');
 connectDB();
+
+// cors 
+const corsOption ={
+    origin: process.env.ALLOWED_CLIENTS.split(',')
+    // [http://localhost:3000],etc... 
+}
 
 //--------Template engine
 // view engine set
