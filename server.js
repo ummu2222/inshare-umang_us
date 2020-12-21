@@ -11,7 +11,6 @@ const cors = require('cors');
 
 const PORT = process.env.PORT || 3000 ;
 
-app.use(cors(corsOption));
 // to add css in download.ejs or to remove MIME error
 app.use(express.static('public'));
 app.use(express.json()); // middleware of express , it will parse json data
@@ -20,10 +19,12 @@ const connectDB = require('./config/db');
 connectDB();
 
 // cors 
-const corsOption ={
+const corsOption = {
     origin: process.env.ALLOWED_CLIENTS.split(',')
     // [http://localhost:3000],etc... 
 }
+
+app.use(cors(corsOption));
 
 //--------Template engine
 // view engine set
