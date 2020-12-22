@@ -1,4 +1,5 @@
-// for expire time 
+// for expire time //   for herokuapp schedular
+
 const File = require('./models/file');
 const fs = require('fs'); // file system module
 
@@ -30,7 +31,6 @@ async function fetchData()
         console.log('job done!');
 
     }
-
 
 } 
 
