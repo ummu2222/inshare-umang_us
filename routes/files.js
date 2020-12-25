@@ -28,6 +28,15 @@ let upload = multer({
 // single bcz we are sharing single file 
 
 
+router.get('/' , (req,res)=>{
+
+    // store files which comes in upload folder
+    //installing lib for file saving  cmd--> yarn add multer
+
+    res.send("hello");
+    // response ---> link
+
+});
 
 router.post('/' , (req,res)=>{
 
