@@ -27,7 +27,7 @@ let upload = multer({
 }).single('myfile');
 // single bcz we are sharing single file 
 
-
+/*
 router.get('/' , (req,res)=>{
 
     // store files which comes in upload folder
@@ -36,7 +36,7 @@ router.get('/' , (req,res)=>{
     res.send("hello");
     // response ---> link
 
-});
+});*/
 
 router.post('/' , (req,res)=>{
 
@@ -49,13 +49,13 @@ router.post('/' , (req,res)=>{
             
         if(!req.file)
         {
-            return res.json({error: 'All fields are required'});
+          //  return res.json({error: 'All fields are required'});
         }
         
 
         if(err)
         {
-            return res.status(500).send({error:err.message });
+         //   return res.status(500).send({error:err.message });
         }
 
         //store into database
