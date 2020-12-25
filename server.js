@@ -19,12 +19,9 @@ const connectDB = require('./config/db');
 connectDB();
 
 // cors 
-const corsOption = {
-    origin: process.env.ALLOWED_CLIENTS.split(',')
-    // [http://localhost:3000],etc... 
-}
 
-app.use(cors(corsOption));
+
+app.use(cors());
 
 //--------Template engine
 // view engine set

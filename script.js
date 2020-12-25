@@ -26,7 +26,6 @@ async function fetchData()
             } catch(err) {
                 console.log(`Error while deleting file ${err}`);
             }
-            
         }
         console.log('job done!');
 
