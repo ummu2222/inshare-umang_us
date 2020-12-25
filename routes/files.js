@@ -55,7 +55,7 @@ router.post('/' , (req,res)=>{
 
         if(err)
         {
-         //   return res.status(500).send({error:err.message });
+           // return res.status(500).send({error:err.message });
         }
 
         //store into database
@@ -68,7 +68,7 @@ router.post('/' , (req,res)=>{
             size : req.file.size
         });
 
-        const response = await file.save();  // await ??
+        const response = await file.save();  
 
         return res.json({file : `${process.env.APP_BASE_URL}/files/${response.uuid}`});
         // returned download link
