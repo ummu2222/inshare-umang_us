@@ -36,7 +36,7 @@ connectDB();
 // cors 
 
 
-app.use(cors());
+//app.use(cors());
 
 //--------Template engine
 // view engine set
