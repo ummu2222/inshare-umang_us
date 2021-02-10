@@ -15,6 +15,17 @@ const cors = require('cors');
 
 const PORT = process.env.PORT || 3000 ;
 
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+
+  next();
+});
+
 // to add css in download.ejs or to remove MIME error
 app.use(express.static('public'));
 app.use(express.json()); // middleware of express , it will parse json data
@@ -39,17 +50,6 @@ app.use('/api/files',require('./routes/files'));
 app.use('/files', require('./routes/show') );
 app.use('/files/download',require('./routes/download'));
 
-
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-
-  next();
-});
 
 app.listen(PORT,()=>{
     console.log(`listening on port ${PORT}`);
